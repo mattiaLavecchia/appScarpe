@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'provaGenerale';
+
+  openMenuBoolean : boolean = false;
+
+  openMenu(){
+    this.openMenuBoolean = !this.openMenuBoolean
+  }
+
 }

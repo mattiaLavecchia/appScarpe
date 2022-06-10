@@ -1,1 +1,86 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+html, body { height: 100%; }
+
+*,::before,::after{
+    box-sizing: border-box;
+  }
+
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul,li,a{
+    margin:0;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+}
+
+.section{
+    padding: 5rem 0 2rem;
+}
+
+.section-title{
+    position: relative;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: .1rem;
+    &::after{
+        content: '';
+        position: absolute;
+        width: 56px;
+        height: .18rem;
+        top: -1rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: black;
+    }
+}
+
+.bd-grid{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .button{
+    display: inline-block;
+    background-color: #141414;
+    color: #fff;
+    padding: 1.125rem 2rem;
+    font-weight: 500;
+    border-radius: .5rem;
+    transition: .3s;
+
+    &:hover{
+        transform: translateY(-.25rem);
+    }
+  }
+  
+  .button-light{
+    display: inline-flex;
+    color: #141414;
+    font-weight: 700;
+    align-items: center;
+        &:hover{
+            .button-icon{
+                transform: translateX(.25rem);
+            }
+        }
+  }
+  
+  .button-icon{
+    font-size: 1.25rem;
+    margin-left: .5rem;
+    transition: .3s;
+  }
+

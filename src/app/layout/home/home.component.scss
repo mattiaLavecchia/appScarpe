@@ -1,0 +1,111 @@
+.home{
+    background-color: #F2F2F2;
+    overflow: hidden;
+  }
+  
+  .home__container{
+    height: calc(100vh - 3rem)
+  }
+  
+  .home__sneaker{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  
+  .home__shape{
+    width: 220px;
+    height: 220px;
+    background-color: #141414;
+    border-radius: 50%;
+  }
+  
+  .home__img{
+    position: absolute;
+    top: 1.5rem;
+    max-width: initial;
+    width: 275px;
+    transform: rotate(-30deg);
+  }
+  
+  .home__new{
+    display: block;
+    font-size: .813rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .home__title{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }
+  
+  .home__description{
+    margin-bottom: 1.8rem;
+  }
+
+  .featured__container{
+    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  .sneaker{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #F2F2F2;
+    border-radius: .5rem;
+    transition: .5s;
+    mat-icon{
+        margin-left: .5rem;
+    }
+  }
+  
+  .sneaker__sale{
+    position: absolute;
+    left: .5rem;
+    background-color: #141414;
+    color: #fff;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
+    font-size: 1.25rem;
+    transform: rotate(-90deg);
+    letter-spacing: .1rem;
+  }
+  
+  .sneaker__img{
+    width: 220px;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    transform: rotate(-30deg);
+    filter: drop-shadow(0 12px 8px rgba(0,0,0,.2));
+  }
+  
+  .sneaker__name, .sneaker__preci{
+    font-size: 1.25rem;
+    letter-spacing: .1rem;
+    font-weight: 700;
+  }
+  
+  .sneaker__name{
+    margin-bottom: .5rem;
+  }
+  
+  .sneaker__preci{
+    margin-bottom: 2rem;
+  }
+  
+  .sneaker:hover{
+    transform: translateY(-.5rem);
+    mat-icon{
+        transition: .5s;
+        transform: translateX(.55rem);
+    }
+  }
+
+  
+
+  

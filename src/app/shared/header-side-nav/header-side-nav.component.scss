@@ -1,0 +1,22 @@
+ul{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: black;
+    gap: 1.5rem;
+
+}
+
+a{
+    color: black;
+    font-size: 2rem;
+    line-height: 1.2rem;
+    font-weight: 700;
+
+    &:hover,
+    &:active{
+        color: blue;
+        transition: .3s;
+    }
+
+}
