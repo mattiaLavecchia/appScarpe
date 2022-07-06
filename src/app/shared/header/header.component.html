@@ -3,11 +3,13 @@
     <span href="" class="button-home">MY PROJECT</span>
 
     <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Sale</a></li>
-        <li><a href="">Man</a></li>
-        <li><a href="">Woman</a></li>
-        <li><a href="">Login</a></li>
+        <li><a routerLink="" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+        <li><a routerLink="saleShoes" routerLinkActive="is-active">Sale</a></li>
+        <li><a routerLink="manShoes" routerLinkActive="is-active">Man</a></li>
+        <li><a routerLink="womanShoes" routerLinkActive="is-active">Woman</a></li>
+        <li  *ngIf="isAuthenticated"><a routerLink="shoppingBag" routerLinkActive="is-active"><mat-icon>shopping_bag</mat-icon></a></li>
+        <li *ngIf="!isAuthenticated"><a routerLink="SignUp-Login" routerLinkActive="is-active"  >Login</a></li>
+        <li *ngIf="isAuthenticated"><a (click)="onLogout()" style="cursor:pointer ;">Logout</a></li>
     </ul>
 
 </mat-toolbar>

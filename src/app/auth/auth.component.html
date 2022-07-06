@@ -1,0 +1,16 @@
+
+<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input matInput placeholder="pat@gmail.com" type="email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password': 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" type="button"> <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
+    </mat-form-field>
+    <div class="button-login">
+        <button mat-raised-button type="submit" color="primary">{{ isLoginMode ? 'Login' : 'SignUp'}}</button>
+        <button mat-raised-button type="button" color="primary" (click)="onSwitchMode()">Switch to {{ isLoginMode ? 'Login' : 'SignUp'}}</button>
+    </div>
+</form>

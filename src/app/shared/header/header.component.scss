@@ -5,6 +5,7 @@ mat-toolbar{
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    overflow: hidden;
 }
 
 span{
@@ -28,16 +29,28 @@ ul{
     }
 }
 
+.is-active{
+    color: blue;
+}
+
 @media (max-width:768px){
     ul{
         display: none;
     }
+    
+    .is-active{
+        color: blue;
+    }
 }
 
 @media (min-width:768px){
+    .is-active{
+        color: blue;
+    }
     .dropdown-menu{
         display: none;
     }
+    
 }
 
  

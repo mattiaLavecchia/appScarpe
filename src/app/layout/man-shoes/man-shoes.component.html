@@ -1,0 +1,34 @@
+<div class="input-search section bd-grid">
+    <div class="first-input ">
+
+        <mat-form-field appearance="fill" >
+            <mat-label>Search your shoes</mat-label>
+            <input matInput placeholder="Es: Nike Jordan">
+        </mat-form-field>
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Size Shoes</mat-label>
+                <mat-select [(value)]="number" name="shoes">
+                    <mat-option *ngFor="let numberShoe of numberShoes" [value]="numberShoe.value">
+                        {{numberShoe.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>     
+            <button mat-raised-button color="primary">FOUND</button>
+        </div>
+    <div class="section bd-grid">
+        <div class="section-title">
+                <h2 class="section-title">MAN SHOES</h2>
+            
+                <div class="container-shoes bd-grid">
+                    <article class="sneaker" *ngFor="let shoe of shoes; let i = index">
+                        <img [src]=shoe.imagePath alt="" class="sneaker__img">
+                        <span class="sneaker__name"> {{shoe.name}}</span>
+                        <span class="sneaker__preci">{{shoe.price}}</span>
+                        <button class="button-light" (click)="addCartShoe(i)">Add to Cart <mat-icon>arrow_forward</mat-icon></button>
+                    </article>
+                </div>
+        </div>
+    </div>
+</div>

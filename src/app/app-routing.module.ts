@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './layout/home/home.component';
-import { HeaderComponent } from './shared/header/header.component';
+import { ManShoesComponent } from './layout/man-shoes/man-shoes.component';
+import { SaleShoesComponent } from './layout/sale-shoes/sale-shoes.component';
+import { WomanShoesComponent } from './layout/woman-shoes/woman-shoes.component';
+import{ ShopComponent} from './layout/shop/shop.component';
+import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './auth/authGuard/auth.guard';
 
 const routes: Routes = [
- {path:'', component: HomeComponent}
+ {path:'', component: HomeComponent},
+ {path:'manShoes', component: ManShoesComponent},
+ {path:'womanShoes', component: WomanShoesComponent},
+ {path:'saleShoes', component: SaleShoesComponent},
+ {path:'shoppingBag', component: ShopComponent, canActivate: [AuthGuard]},
+ {path:'SignUp-Login', component: AuthComponent},
 ];
 
 @NgModule({

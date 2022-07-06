@@ -1,7 +1,9 @@
 <ul>
-    <li><a href="">Home</a></li>
-    <li><a href="">Sale</a></li>
-    <li><a href="">Man</a></li>
-    <li><a href="">Woman</a></li>
-    <li><a href="">Login</a></li>
+    <li><a routerLink="" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}">Home</a></li>
+    <li><a routerLink="saleShoes" routerLinkActive="is-active">Sale</a></li>
+    <li><a routerLink="manShoes" routerLinkActive="is-active">Man</a></li>
+    <li><a routerLink="womanShoes" routerLinkActive="is-active">Woman</a></li>
+    <li><a routerLink="shoppingBag" routerLinkActive="is-active" *ngIf="isAuthenticated"><mat-icon>shopping_bag</mat-icon></a></li>
+    <li><a routerLink="SignUp-Login" routerLinkActive="is-active" >Login</a></li>
+    <li *ngIf="isAuthenticated"><a (click)="onLogout()">Logout</a></li>
 </ul>

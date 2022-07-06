@@ -1,0 +1,29 @@
+<div class="section bd-grid">
+    <div class="section-title">
+            <h2 class="section-title">Cart <mat-icon>shopping_cart</mat-icon></h2>
+        
+            <div class="container-shoes bd-grid">
+                <article class="sneaker" *ngFor="let shopList of card; let i = index">
+                    <div class="sneaker__sale" *ngIf="shopList.sale">Sale</div>
+                    <img [src]=shopList.imagePath alt="" class="sneaker__img">
+                    <span class="sneaker__name">{{shopList.name}}</span>
+                    <span class="sneaker__preci">{{shopList.price}}</span>
+                </article>
+                <article class="sneaker">
+                    <img src="../../../assets/img/women2.png" alt="" class="sneaker__img">
+                    <span class="sneaker__name">Nike Free TR</span>
+                    <span class="sneaker__preci">$129.99</span>
+                </article>
+                <article class="sneaker">
+                    <img src="../../../assets/img/women3.png" alt="" class="sneaker__img">
+                    <span class="sneaker__name">Nike GS Pink</span>
+                    <span class="sneaker__preci">$129.99</span>
+                </article>
+                <article class="sneaker">
+                    <img src="../../../assets/img/women4.png" alt="" class="sneaker__img">
+                    <span class="sneaker__name">Nike GS Pink</span>
+                    <span class="sneaker__preci">$129.99</span>          
+                </article>
+            </div>
+    </div>
+</div> 

@@ -31,8 +31,8 @@
   
   .home__new{
     display: block;
-    font-size: .813rem;
-    font-weight: 600;
+    font-size: .850rem;
+    font-weight: 700;
     margin-bottom: 1rem;
   }
   
@@ -106,6 +106,239 @@
     }
   }
 
+  .collection__card{
+    position: relative;
+    display: flex;
+    height: 328px;
+    background-color: #F2F2F2;
+    padding: 2rem;
+    border-radius: .5rem;
+    transition: .3s;
+    mat-icon{
+        margin-left: .5rem;
+    }
+  }
+  
+  .collection__data{
+    align-self: flex-end;
+  }
+  
+  .collection__img{
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 230px;
+  }
+  
+  .collection__name{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+  }
+  
+  .collection__description{
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  
+  .collection__card:hover{
+    transform: translateY(-.5rem);
+    mat-icon{
+        transition: .5s;
+        transform: translateX(.55rem);
+    }
+  }
+
+  .women__container{
+    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .offer__container{
+    grid-template-columns: 55% 45%;
+    column-gap: 0;
+    background-color: #F2F2F2;
+    border-radius: .5rem;
+    justify-content: center;
+  }
+  
+  .offer__data{
+    padding: 4rem 0 4rem 1.5rem;
+  }
+  
+  .offer__title{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+  }
+  
+  .offer__description{
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  
+  .offer__img{
+    width: 153px;
+  }
+
+  .new__container{
+    row-gap: 2rem;
+  }
+  
+  .new__mens{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F2F2F2;
+    border-radius: .5rem;
+    padding: 2rem;
+  }
+  
+  .new__mens-img{
+    width: 276px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .new__title{
+    font-size: 1.5rem ;
+    font-weight: 700;
+    margin-bottom: .25rem;
+  }
+  
+  .new__preci{
+    display: block;
+    margin-bottom: 2rem;
+  }
+  
+  .new__sneaker{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  .new__sneaker-card{
+    position: relative;
+    padding: 3.5rem 1.5rem;
+    background-color: #F2F2F2;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .new__sneaker-img{
+    width: 220px;
+  }
+  
+  .new__sneaker-overlay{
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(138,138,138, .3);
+    transition: .3s;
+  }
+  
+  .new__sneaker-card:hover .new__sneaker-overlay{
+    bottom: 0;
+  }
+
+  @media screen and (min-width: 576px){
+    .collection__container{
+      grid-template-columns: 415px;
+    }
+  
+    .collection__img{
+      width: 260px;
+    }
+    .offer__container{
+      grid-template-columns: max-content max-content;
+    }
+  
+    .offer__data{
+      text-align: center;
+    }
+  
+    .new__mens{
+      align-items: center;
+    }
+  
+  }
+  
+  @media screen and (min-width: 768px){
+  
+    .home__container{
+      height: 100vh;
+      grid-template-columns: max-content max-content;
+      justify-content: center;
+      align-items: center;
+    }
+    .home__sneaker{
+      order: 1;
+    }
+    .home__shape{
+      width: 376px;
+      height: 376px;
+    }
+  
+    .home__img{
+      width: 470px;
+      top: 3.5rem;
+      right: 0;
+      left: -3rem;
+    }
+  
+    .newsletter__container{
+      grid-template-columns: max-content max-content;
+      justify-content: center;
+      align-items: center;
+      padding: 4.5rem 2rem;
+      column-gap: 3rem;
+    }
+  
+    .newsletter__description{
+      margin-bottom: 0;
+    }
+  
+    .newsletter__subscribe{
+      width: 360px;
+      height: max-content;
+    }
+  }
+  
+  @media screen and (min-width: 1024px){
+    .bd-grid{
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .home__container{
+      column-gap: 8rem;
+    }
+  
+    .collection__container{
+      grid-template-columns: repeat(2, 415px);
+    }
+  
+    .new__container{
+      grid-template-columns: max-content 1fr;
+    }
+  
+    .new__mens{
+      align-items: initial;
+      justify-content: flex-end ;
+      padding: 4rem 2rem;
+    }
+  
+    .new__mens-img{
+      margin-bottom: var(--mb-6);
+    }
+  }
   
 
   

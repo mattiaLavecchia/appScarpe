@@ -1,0 +1,31 @@
+.footer__container{
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  .footer__box{
+    margin-bottom: 2rem;
+  }
+  
+  .footer__title{
+    font-size: 1.25rem;
+  }
+  
+  .footer__link{
+    display: block;
+    width: max-content;
+    margin-bottom: .5rem;
+    color: black;
+    font-weight: 500;
+  }
+  
+  .footer__social{
+    font-size: 1.5rem;
+    margin-right: 1.25rem;
+  }
+  
+  .footer__copy{
+    padding-top: 3rem;
+    font-size: .813rem;
+    color: #8A8A8A;
+    text-align: center;
+  }
