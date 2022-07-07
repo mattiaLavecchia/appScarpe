@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Subject, tap } from 'rxjs';
+import { catchError, map, Subject, tap, throwError } from 'rxjs';
 import { AuthService } from '../../auth/auth.service';
 import { Shoe } from '../../model/shoes.model';
 
@@ -46,9 +46,9 @@ cartChange = new Subject<Shoe[]>();
   }
 
   addcartList(shoe:Shoe){
-     if(this.authService.user.value === null){
-     return;
-     }
+    //  if(this.authService.user.value === null){
+    //  return;
+    //  }
     this.cartChange.next(this.cart.slice());
     this.storeCartShoe(shoe);
   }
@@ -72,23 +72,17 @@ cartChange = new Subject<Shoe[]>();
 
 
   private storeCartShoe(shoe: Shoe){
-    if(this.authService.idUserDatabase === null) {
-      return 
-    }
     const idUser =  this.authService.idUserDatabase;
     const cartShoe = shoe;
     //DA AGGIUNGERE TIPO IL TOKEN MA PER LE INFORMAZIONI DELL'UTENTE E VEDERE ANCHE SE è UN NUOVO USER O NO
-    this.http.post(`https://progettoscarpeportfoglio-default-rtdb.firebaseio.com/cartShoe/${idUser}.json`,cartShoe)
+    this.http.post(`https://progettoscarpeportfoglio-default-rtdb.firebaseio.com/cartShoe/${idUser}.json`,cartShoe).pipe(catchError(this.handleErrorShoe))
     .subscribe();
   }
 
   private fetchCartShoe(){
-    if(this.authService.idUserDatabase === null) {
-      return;
-    }
     const idUser =  this.authService.idUserDatabase;
     this.http.get<Shoe[]>(`https://progettoscarpeportfoglio-default-rtdb.firebaseio.com/cartShoe/${idUser}.json`)
-    .pipe(map(responseData => {
+    .pipe( map(responseData => {
       const shoeArray: Shoe[] = [];
       for (const key in responseData){
         if(responseData.hasOwnProperty(key)){
@@ -101,6 +95,20 @@ cartChange = new Subject<Shoe[]>();
       this.cart= post;
     }
     )
+  }
+
+  private handleErrorShoe(errorRes: HttpErrorResponse){
+    let errorMessage= 'Unkown error occurred!';
+    if(!errorRes.error || !errorRes.error.error){
+
+      return throwError(errorMessage);
+    }
+    switch (errorRes.error.error){
+      case 'Permission denied':
+        errorMessage = 'Please login to add shoes to cart';
+        break;
+    }
+    return throwError(errorMessage);
   }
 
 

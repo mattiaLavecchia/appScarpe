@@ -1,4 +1,5 @@
 
+<app-alert [message]="errortype" *ngIf="errortype" (close)="onHandleError()"></app-alert>
 <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
     <mat-form-field appearance="fill">
         <mat-label>E-mail</mat-label>

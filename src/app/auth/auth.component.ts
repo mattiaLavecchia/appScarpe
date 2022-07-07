@@ -14,7 +14,7 @@ export class AuthComponent implements OnInit {
   isLoginMode = true;
   hide = true;
   signUpForm: FormGroup = new FormGroup({ });
-  errortype: string = '';
+  errortype: string;
 
   constructor(private authService: AuthService, private router: Router) { }
 
@@ -55,6 +55,10 @@ export class AuthComponent implements OnInit {
      this.errortype = errorRes;
    });
 
+  }
+
+  onHandleError(){
+    this.errortype= null;
   }
   
   

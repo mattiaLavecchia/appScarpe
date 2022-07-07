@@ -3,7 +3,7 @@
     <li><a routerLink="saleShoes" routerLinkActive="is-active">Sale</a></li>
     <li><a routerLink="manShoes" routerLinkActive="is-active">Man</a></li>
     <li><a routerLink="womanShoes" routerLinkActive="is-active">Woman</a></li>
-    <li><a routerLink="shoppingBag" routerLinkActive="is-active" *ngIf="isAuthenticated"><mat-icon>shopping_bag</mat-icon></a></li>
+    <li *ngIf="isAuthenticated"><a routerLink="shoppingBag" routerLinkActive="is-active" ><mat-icon>shopping_bag</mat-icon></a></li>
     <li><a routerLink="SignUp-Login" routerLinkActive="is-active" >Login</a></li>
     <li *ngIf="isAuthenticated"><a (click)="onLogout()">Logout</a></li>
 </ul>

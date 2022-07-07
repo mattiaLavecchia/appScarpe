@@ -26,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './auth/interceptor/auth-interceptor.service';
 import { ShoesService } from './layout/service/shoes.service';
+import { AlertComponent } from './shared/alert/alert.component';
 
 
 
@@ -40,7 +41,8 @@ import { ShoesService } from './layout/service/shoes.service';
     ManShoesComponent,
     WomanShoesComponent,
     ShopComponent,
-    AuthComponent
+    AuthComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
