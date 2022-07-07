@@ -53,7 +53,7 @@ export class AuthComponent implements OnInit {
    },errorRes => {
      console.log(errorRes);
      this.errortype = errorRes;
-   })
+   });
 
   }
   

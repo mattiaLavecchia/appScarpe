@@ -8,7 +8,6 @@ import { ShoesService } from 'src/app/layout/service/shoes.service';
   styleUrls: ['./man-shoes.component.scss']
 })
 export class ManShoesComponent implements OnInit {
-  number: string = '';
   shoes: Shoe[] = [];
 
   constructor(public shoesService : ShoesService) { }
@@ -17,14 +16,6 @@ export class ManShoesComponent implements OnInit {
     this.shoes = this.shoesService.getShoesList();
   }
 
-  numberShoes = [
-    {value: '38'},
-    {value: '39'},
-    {value: '40'},
-    {value: '41'},
-    {value: '42'},
-    {value: '43'},
-  ];
 
   addCartShoe(i:number): void{
     this.shoesService.addcartList(this.shoes[i])

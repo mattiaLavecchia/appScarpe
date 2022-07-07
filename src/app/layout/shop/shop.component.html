@@ -8,6 +8,7 @@
                     <img [src]=shopList.imagePath alt="" class="sneaker__img">
                     <span class="sneaker__name">{{shopList.name}}</span>
                     <span class="sneaker__preci">{{shopList.price}}</span>
+                    <a class="deleteClass" (click)="deleteOneShoe(i)"> X</a>
                 </article>
             </div>
     </div>

@@ -25,6 +25,21 @@
     mat-icon{
         margin-left: .5rem;
     }
+    .deleteClass{
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px;
+      color: #141414;
+      cursor: pointer;
+      opacity: 0;
+      
+    }
+    &:hover{
+      .deleteClass{
+        opacity: 1;
+      }
+    }
   }
   
   .sneaker__sale{
@@ -78,3 +93,5 @@
       margin-left: 10px;
     }
   }
+
+  

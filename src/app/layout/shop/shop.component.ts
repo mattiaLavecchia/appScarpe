@@ -21,6 +21,10 @@ export class ShopComponent implements OnInit {
     });
   }
 
+  deleteOneShoe(i:number){
+    this.shoesService.deleteShoes(i);
+  }
+
   
 
 

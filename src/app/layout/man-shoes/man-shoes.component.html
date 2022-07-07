@@ -1,22 +1,4 @@
-<div class="input-search section bd-grid">
-    <div class="first-input ">
 
-        <mat-form-field appearance="fill" >
-            <mat-label>Search your shoes</mat-label>
-            <input matInput placeholder="Es: Nike Jordan">
-        </mat-form-field>
-
-
-            <mat-form-field appearance="fill">
-                <mat-label>Size Shoes</mat-label>
-                <mat-select [(value)]="number" name="shoes">
-                    <mat-option *ngFor="let numberShoe of numberShoes" [value]="numberShoe.value">
-                        {{numberShoe.value}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>     
-            <button mat-raised-button color="primary">FOUND</button>
-        </div>
     <div class="section bd-grid">
         <div class="section-title">
                 <h2 class="section-title">MAN SHOES</h2>
@@ -31,4 +13,3 @@
                 </div>
         </div>
     </div>
-</div>
