@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { AuthService } from '../auth/auth.service';
-import { Shoe } from '../model/shoes.model';
+import { ShoesStorageService } from 'src/app/shared/data-storage/shoes-storage.service';
+import { AuthService } from '../../auth/auth.service';
+import { Shoe } from '../../model/shoes.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ export class ShoesService {
 
 cartChange = new Subject<Shoe[]>();
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private shoesStorage: ShoesStorageService  ) { }
+
+
 
   cart: Shoe[] = [
     {id:'1', name:'Nike Free TR', price:'$119.99',imagePath:"../../assets/img/women1.png", gender:'women',sale:true},
@@ -33,16 +36,22 @@ cartChange = new Subject<Shoe[]>();
   }
 
   getsaleShoes(){
-    return this.saleShoe.slice()
+    return this.saleShoe.slice();
   }
 
   getCartList(){
    return this.cart.slice();
   }
 
+
   addcartList(shoe:Shoe){
+     if(this.authService.user.value === null){
+     return;
+     }
     this.cart.push(shoe);
     this.cartChange.next(this.cart.slice());
+    this.shoesStorage.storeCartShoe(shoe);
   }
+
 
 }

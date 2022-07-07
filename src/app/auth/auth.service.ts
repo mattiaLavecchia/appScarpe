@@ -18,7 +18,7 @@ export interface AuthResponseData{
 })
 export class AuthService {
 
-  user = new BehaviorSubject<User|null>(null);
+  user = new BehaviorSubject<User>(null);
   idUserDatabase: string | null;
   private tokenExpirationTimer: any;
 
@@ -31,7 +31,6 @@ export class AuthService {
       returnSecureToken: true
     }).pipe(catchError(this.handleError), tap(resData => {
         this.handleAuthentication(resData.email,resData.localId,resData.idToken, +resData.expiresIn);
-        this.idUserDatabase = resData.localId;
         }));
   }
   
@@ -42,12 +41,12 @@ export class AuthService {
       returnSecureToken : true
     }).pipe(catchError(this.handleError), tap(resData => {
       this.handleAuthentication(resData.email,resData.localId,resData.idToken, +resData.expiresIn);
-      this.idUserDatabase = resData.localId;
+     
       }));
   }
 
   logout(){
-    this.user.next(null);
+    this.user.next(null!);
     this.router.navigate(['']);
     localStorage.removeItem('userData');
     if(this.tokenExpirationTimer){
@@ -79,10 +78,11 @@ export class AuthService {
   }
 
 
-  private handleAuthentication(email:string, userId:string, token:string, expiresIn: number){
+  private handleAuthentication(email:string, localId:string, idToken:string, expiresIn: number){
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
-      const user = new User(email, userId, token, expirationDate);
+      const user = new User(email, localId, idToken, expirationDate);
       this.user.next(user);
+      this.idUserDatabase = localId;
       this.autoLogout(expiresIn * 1000);
       localStorage.setItem('userData',JSON.stringify(user));
   };

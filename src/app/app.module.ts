@@ -25,6 +25,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './auth/interceptor/auth-interceptor.service';
+import { ShoesService } from './layout/service/shoes.service';
+
 
 
 @NgModule({
@@ -54,7 +56,7 @@ import { AuthInterceptorService } from './auth/interceptor/auth-interceptor.serv
     MatSelectModule,
     MatFormFieldModule,
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService,multi:true}],
+  providers: [ShoesService,{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

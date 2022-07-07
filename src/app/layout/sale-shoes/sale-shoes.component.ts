@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Shoe } from 'src/app/model/shoes.model';
-import { ShoesService } from 'src/app/shared/shoes.service';
+import { ShoesService } from 'src/app/layout/service/shoes.service';
 
 @Component({
   selector: 'app-sale-shoes',
